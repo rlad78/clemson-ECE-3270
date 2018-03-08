@@ -1,0 +1,83 @@
+\documentclass[paper=a4, fontsize=11pt,twoside]{scrartcl} 
+
+\usepackage[a4paper,pdftex]{geometry}	% A4paper margins
+\setlength{\oddsidemargin}{5mm}			% Remove 'twosided' indentation
+\setlength{\evensidemargin}{5mm}
+
+\usepackage[english]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}	
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{graphicx}
+
+% --------------------------------------------------------------------
+% Definitions (do not change this)
+% --------------------------------------------------------------------
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}} 	% Horizontal rule
+
+\makeatletter							% Title
+\def\printtitle{%						
+	{\centering \@title\par}}
+\makeatother									
+
+\makeatletter							% Author
+\def\printauthor{%					
+	{\centering \large \@author}}				
+\makeatother					
+
+% --------------------------------------------------------------------
+% Metadata (Change this)
+% --------------------------------------------------------------------
+\title{	\normalsize \textsc{Lab 1, Group 1: Basic Gates} 	% Subtitle
+	\\[2.0cm]								% 2cm spacing
+	\HRule{0.5pt} \\						% Upper rule
+	\LARGE \textbf{\uppercase{character storage and display}}	% Title
+	\HRule{2pt} \\ [0.5cm]		% Lower rule + 0.5cm spacing
+	\normalsize \today			% Todays date
+}
+
+\author{
+	Richard Carter\\	
+	Clemson University\\	
+	Department of Electrical and Computer Engineering\\
+	\texttt{rcarte4@clemson.edu} \\
+}
+
+
+\begin{document}
+% ------------------------------------------------------------------------------
+% Maketitle
+% ------------------------------------------------------------------------------
+\thispagestyle{empty}		% Remove page numbering on this page
+
+\printtitle					% Print the title data as defined above
+\vfill
+\printauthor				% Print the author data as defined above
+\newpage
+
+
+% ------------------------------------------------------------------------------
+% Begin document
+% ------------------------------------------------------------------------------
+
+\setcounter{page}{1}		% Set page numbering to begin on this page
+\section{Introduction}
+
+This lab required us to construct a system of memory modules, multiplexers, and decoders to create a character storage and display system that also includes a rotate feature. This was accomplished by creating individual parts and using them to construct a larger system. The system was all functional in the end, with the exception of parts of the rotation feature.
+
+\section{Design}\label{design}
+\subsection{Memory}
+The lowest level components are the d-type flip flops. These are used to store character codes that can be chosen by the user. For the final product, there are generated in a group of 4 in order to store 4 of the 3-bit character codes. Their values are referenced by a 12-bit long signal vector that is fed into the multiple multiplexers.
+
+\subsection{Character Decoder}
+The character code chosen by the 5-by-1 multiplexer of the respective display unit is fed into a 7-segment decoder. This feeds a signal representative of a specific character into the 7-segment display. The characters are hard-coded into the hardware and cannot be changed by the user. The default character set is 't', 'i', 'g', 'e', 'r', ' ', but the source code contains another character set in order to display the word "HELLO".
+
+\section{Results}\label{result}
+Overall, the lab was a success. The shifting functionality has a bug where left-trailing characters do not properly update, and become stuck to the character value of the first memory module. This is most likely due to a generate statement for the multiple multiplexers having undesired logic. 
+
+\bibliographystyle{abbrv}
+\bibliography{myreference}
+
+\section{Appendix}\label{appendix}
+
+\end{document}
+This is never printed

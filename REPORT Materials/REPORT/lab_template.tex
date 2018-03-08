@@ -1,0 +1,106 @@
+\documentclass[paper=a4, fontsize=11pt,twoside]{scrartcl} 
+
+\usepackage[a4paper,pdftex]{geometry}	% A4paper margins
+\setlength{\oddsidemargin}{5mm}			% Remove 'twosided' indentation
+\setlength{\evensidemargin}{5mm}
+
+\usepackage[english]{babel}
+\usepackage[protrusion=true,expansion=true]{microtype}	
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+\lstset{
+	breaklines=true,
+	frame=single,
+	captionpos=b
+}
+\graphicspath{ {images/} }
+\usepackage{url}
+\usepackage{framed}
+\usepackage{subcaption}
+
+% --------------------------------------------------------------------
+% Definitions (do not change this)
+% --------------------------------------------------------------------
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}} 	% Horizontal rule
+
+\makeatletter							% Title
+\def\printtitle{%						
+	{\centering \@title\par}}
+\makeatother									
+
+\makeatletter							% Author
+\def\printauthor{%					
+	{\centering \large \@author}}				
+\makeatother					
+
+% --------------------------------------------------------------------
+% Metadata (Change this)
+% --------------------------------------------------------------------
+\title{	\normalsize \textsc{!! Lab num: LAB NAME !!} 	% Subtitle
+	\\[2.0cm]								% 2cm spacing
+	\HRule{0.5pt} \\						% Upper rule
+	\LARGE \textbf{\uppercase{!! NICE TITLE !!}}	% Title
+	\HRule{2pt} \\ [0.5cm]		% Lower rule + 0.5cm spacing
+	\normalsize \today			% Todays date
+}
+
+\author{
+	Richard Carter\\	
+	Clemson University\\	
+	Department of Electrical and Computer Engineering\\
+	\texttt{rcarte4@clemson.edu} \\
+}
+
+
+\begin{document}
+% ------------------------------------------------------------------------------
+% Maketitle
+% ------------------------------------------------------------------------------
+\thispagestyle{empty}		% Remove page numbering on this page
+
+\printtitle					% Print the title data as defined above
+\vfill
+\printauthor				% Print the author data as defined above
+\newpage
+
+% ------------------------------------------------------------------------------
+% Abstract
+% ------------------------------------------------------------------------------
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+\begin{Huge}
+\section{Abstract} % (fold)
+\label{sec:abstract}
+\end{Huge}
+\end{center}
+words for your abstract
+
+\vspace*{\fill}
+% paragraph abstract (end)
+\newpage
+
+% ------------------------------------------------------------------------------
+% Begin document
+% ------------------------------------------------------------------------------
+
+\setcounter{page}{1}		% Set page numbering to begin on this page
+\section{Introduction} % (fold)
+\label{sec:introduction}
+
+% section introduction (end)
+
+\section{Conclusion} % (fold)
+\label{sec:conclusion}
+
+% section conclusion (end)
+
+
+
+\bibliographystyle{abbrv}
+\bibliography{myreference}
+
+% \section{Appendix}\label{appendix}
+
+\end{document}

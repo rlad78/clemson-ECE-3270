@@ -1,0 +1,8 @@
+*.DS_Store
+*.sublime*
+*.aux
+*.bbl
+*.blg
+*.log
+*.synctex.gz
+*.bak
